@@ -1,7 +1,5 @@
-//Casos de testes de usuário
 const massa = require("../../data/massa.json");
 
-//TODO fazer a validação de contrato
 describe("User API Tests", () => {
     context("Testes positivos", () => {
         it("CT01 - Busca de usuário", () => {

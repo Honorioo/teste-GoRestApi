@@ -21,7 +21,7 @@ describe("User API Tests", () => {
             cy.postGenericoApi("users", payload).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 userId = response.body.id;
-                cy.validarStatusCode(response, 200);
+                cy.validarStatusCode(response, 201);
             });
         })
     });
@@ -69,7 +69,7 @@ describe("User API Tests", () => {
 
     afterEach(() => {
         it("Deletar usuário criado", () => {
-            cy.deleteIdGenericoApi("users", userId).then((response) => {
+            cy.deleteGenericoApi("users", userId).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 204);
             });

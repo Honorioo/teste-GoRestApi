@@ -1,4 +1,4 @@
-import { cy, faker, it } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
 let payload;
 let userId;
@@ -24,7 +24,7 @@ describe("User API Tests", () => {
     
     context("Testes positivos", () => {
         it("CT01 - Deletar usuário com sucesso", () =>{
-            cy.deleteIdGenericoApi("users", userId).then((response) => {
+            cy.deleteGenericoApi("users", userId).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 204);
             });
@@ -32,19 +32,19 @@ describe("User API Tests", () => {
     });
     context("Testes negativos", () => {
         it("CT02 - Tentar deletar usuário inexistente", () =>{
-            cy.deleteIdGenericoApi("users", "0000000").then((response) => {
+            cy.deleteGenericoApi("users", "0000000").then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 404);
             });
         });
         it("CT03 - Tentar deletar usuário com caractere especial no ID", () =>{
-            cy.deleteIdGenericoApi("users", "@#_)(<").then((response) => {
+            cy.deleteGenericoApi("users", "@#_)(<").then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 404);
             });
         });
         it("CT04 - Tentar deletar usuário sem informar o ID", () =>{
-            cy.deleteIdGenericoApi("users", "").then((response) => {
+            cy.deleteGenericoApi("users", "").then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 404);
             });
