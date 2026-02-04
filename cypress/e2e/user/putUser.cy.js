@@ -83,7 +83,7 @@ describe("User API Tests", () => {
 
     afterEach(() => {
         it("Deletar usuário criado", () => {
-            cy.deleteIdGenericoApi("users", userId).then((response) => {
+            cy.deleteGenericoApi("users", userId).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 204);
             });
