@@ -1,8 +1,10 @@
 const { faker } = require("@faker-js/faker");
 
+let userId;
+let postId;
+
 describe("Delete Api Test", () => {
-    let userId;
-    let postId;
+
     beforeEach('Criação de um usuário para o post', () => {
         cy.fixture("userFixture/bodyUser").then((body) => {
             const userPayload = {...body};
