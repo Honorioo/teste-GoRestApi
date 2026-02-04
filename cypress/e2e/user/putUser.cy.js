@@ -11,56 +11,70 @@ describe("User API Tests", () => {
         });
     });
     
+    beforeEach(() => {
+        // Criar um usuário para ser atualizado nos testes de PUT
+        payload.email = faker.internet.email();
+        payload.name = faker.person.fullName();
+        payload.gender = faker.person.sex();
+        payload.status = "active";
+            
+        cy.postGenericoApi("users", payload).then((response) => {
+            cy.log(JSON.stringify(response.body));
+            userId = response.body.id;
+            cy.validarStatusCode(response, 201);
+        });
+    });
+
+
     context("Testes positivos", () => {
-        it("CT01 - Criar usuário com sucesso", () =>{
+        it("CT01 - Atualizar usuário com sucesso", () =>{
             payload.email = faker.internet.email();
             payload.name = faker.person.fullName();
             payload.gender = faker.person.sex();
             payload.status = "active";
             
-            cy.postGenericoApi("users", payload).then((response) => {
+            cy.putGenericoApi("users", userId, payload).then((response) => {
                 cy.log(JSON.stringify(response.body));
-                userId = response.body.id;
                 cy.validarStatusCode(response, 200);
             });
         })
     });
     context("Testes negativos", () => {
-        it("CT02 - Tentar criar usuário sem informar o email", () =>{
+        it("CT02 - Tentar Atualizar usuário sem informar o email", () =>{
             delete payload.email;
             payload.name = faker.person.fullName();
             payload.gender = faker.person.sex();
             payload.status = "active";
 
-            cy.postGenericoApi("users", payload).then((response) => {
+            cy.putGenericoApi("users", userId,payload).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 422);
             });
         });
-        it("CT03 - Tentar criar usuário sem informar o nome", () =>{
+        it("CT03 - Tentar Atualizar usuário sem informar o nome", () =>{
             payload.email = faker.internet.email();
             delete payload.name;
             payload.gender = faker.person.sex();
             payload.status = "active";
 
-            cy.postGenericoApi("users", payload).then((response) => {
+            cy.putGenericoApi("users", userId,payload).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 422);
             });
         });
-        it("CT04 - Tentar criar usuário sem informar o gender", () =>{
+        it("CT04 - Tentar Atualizar usuário sem informar o gender", () =>{
             payload.email = faker.internet.email();
-            payload.name = faker.person.fullName();
+            payload.name = faker.person.fullName();;
             delete payload.gender;
             payload.status = "active";
 
-            cy.postGenericoApi("users", payload).then((response) => {
+            cy.putGenericoApi("users", userId, payload).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 422);
             });
         });
-        it("CT05 - Tentar criar usuário sem passar o payload", () =>{
-            cy.postGenericoApi("users").then((response) => {
+        it("CT05 - Tentar Atualizar usuário sem passar o payload", () =>{
+            cy.putGenericoApi("users", userId).then((response) => {
                 cy.log(JSON.stringify(response.body));
                 cy.validarStatusCode(response, 422);
             });
