@@ -5,5 +5,9 @@
     "post": {
         "idPost": "269660",
         "userId": "8353928"
+    },
+    "comment": {
+        "idComment": "182777",
+        "postId": "269660"
     }
 }
