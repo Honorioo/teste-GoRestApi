@@ -1,43 +1,42 @@
-📌 Teste GoRest API
+# 📌 Teste GoRest API
 
-Este projeto é um teste prático de consumo da API pública GoRest, desenvolvido com o objetivo de demonstrar conhecimentos em integração com APIs REST, manipulação de requisições HTTP e organização de um projeto voltado a testes e estudos.
+Este projeto é um **teste prático de consumo da API pública GoRest**, desenvolvido com o objetivo de demonstrar conhecimentos em **integração com APIs REST**, manipulação de requisições HTTP e organização de um projeto voltado a estudos e portfólio.
 
-A API utilizada fornece dados simulados de usuários, posts, comentários e outros recursos, sendo amplamente empregada para fins educacionais e de validação técnica.
+A API utilizada fornece dados simulados de usuários, posts, comentários e outros recursos, sendo amplamente utilizada para fins educacionais e testes técnicos.
 
-🔗 API Utilizada
+---
 
-GoRest API
+## 🔗 API Utilizada
 
-Documentação oficial:
-👉 https://gorest.co.in/
+- **GoRest API**
+- Documentação oficial:  
+  https://gorest.co.in/
 
-🎯 Objetivo do Projeto
+---
 
-Consumir uma API REST pública
+## 🎯 Objetivo do Projeto
 
-Realizar requisições HTTP (GET, POST, PUT e DELETE, conforme implementação)
+- Consumir uma API REST pública
+- Realizar requisições HTTP (GET, POST, PUT e DELETE)
+- Trabalhar com dados no formato JSON
+- Estruturar um projeto simples e organizado
+- Demonstrar boas práticas no consumo de APIs externas
 
-Trabalhar com dados retornados em formato JSON
+---
 
-Estruturar um projeto simples, porém organizado, para fins de estudo e portfólio
+## 🛠️ Tecnologias Utilizadas
 
-Praticar boas práticas de integração com APIs externas
+- JavaScript
+- Node.js
+- API REST
+- JSON
+- Biblioteca HTTP (Fetch ou Axios)
 
-🛠️ Tecnologias Utilizadas
+---
 
-JavaScript
+## 📂 Estrutura do Projeto
 
-Node.js
-
-Fetch / Axios (ou biblioteca HTTP utilizada no projeto)
-
-JSON
-
-API REST
-
-(Caso esteja utilizando outra biblioteca ou framework específico, você pode ajustar esta seção facilmente.)
-
-📂 Estrutura do Projeto
+```bash
 teste-GoRestApi/
 ├── src/
 │   ├── services/
@@ -47,63 +46,27 @@ teste-GoRestApi/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
+---
 
+##🚀 Como Executar o Projeto
 
-A estrutura foi pensada para manter a separação de responsabilidades, facilitando a leitura e manutenção do código.
-
-🚀 Como Executar o Projeto
 1️⃣ Clonar o repositório
+```bash
 git clone https://github.com/Honorioo/teste-GoRestApi.git
+```
 
 2️⃣ Acessar a pasta do projeto
+```bash
 cd teste-GoRestApi
+```
 
 3️⃣ Instalar as dependências
+```bash
 npm install
+```
 
 4️⃣ Executar o projeto
+```bash
 npm start
-
-🔐 Autenticação
-
-A API GoRest exige Token de autenticação para algumas rotas (como criação, edição ou exclusão de dados).
-
-Exemplo de uso do token no header:
-
-Authorization: Bearer SEU_TOKEN_AQUI
-
-
-⚠️ Importante:
-Nunca versionar tokens reais no repositório. Utilize variáveis de ambiente (.env) quando necessário.
-
-📌 Funcionalidades Implementadas
-
-Consumo de dados da API GoRest
-
-Requisições HTTP para endpoints públicos
-
-Tratamento de respostas e erros
-
-Organização de código voltada para escalabilidade
-
-📈 Possíveis Melhorias Futuras
-
-Implementação de testes automatizados
-
-Criação de variáveis de ambiente com .env
-
-Separação completa em camadas (Service, Controller, Repository)
-
-Documentação de endpoints consumidos
-
-Implementação de logs e tratamento avançado de erros
-
-👤 Autor
-
-Desenvolvido por Vinicius Honório
-🔗 GitHub: https://github.com/Honorioo
-
-📄 Licença
-
-Este projeto foi desenvolvido para fins de estudo e aprendizado.
-Sinta-se à vontade para utilizar, adaptar e evoluir o código.
+```
