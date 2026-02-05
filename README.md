@@ -52,7 +52,7 @@ teste-GoRestApi/
 
 ---
 
-##🔐 Variáveis de Ambiente (.env)
+## 🔐 Variáveis de Ambiente (.env)
 ```bash
 BASE_URL=https://gorest.co.in/public/v2
 AUTH_TOKEN=SEU_TOKEN_AQUI
@@ -67,7 +67,7 @@ Utilize o .env.example como referência.
 
 ---
 
-🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 1️⃣ Clonar o repositório
 ```bash
 git clone https://github.com/Honorioo/teste-GoRestApi.git
@@ -96,7 +96,7 @@ npm start
 ```
 ---
 
-##📌 Funcionalidades Implementadas
+## 📌 Funcionalidades Implementadas
 
 Consumo da API GoRest
 
@@ -110,7 +110,7 @@ Código organizado e de fácil manutenção
 
 ---
 
-##👤 Autor
+## 👤 Autor
 
 Desenvolvido por Vinicius Honorio
 
